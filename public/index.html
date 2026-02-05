@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ultimate PWA Todo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="theme-color" content="#007bff">
+</head>
+<body>
+<div id="login-overlay" class="login-overlay">
+    <div class="login-box">
+        <h2>🔒 Вход в систему</h2>
+        <input type="password" id="loginPass" placeholder="Введите пароль">
+        <button onclick="login()" class="btn-save">Войти</button>
+        <p id="login-error" style="color:red; display:none;">Ошибка доступа</p>
+    </div>
+</div>
+
+<div id="app" style="display:none;">
+        <!-- ЭКРАН 1: СПИСОК (АКТИВНЫЕ) -->
+        <section id="screen-list" class="screen">
+            <header><h1>Мои задачи</h1></header>
+            <div class="calendar-nav">
+                <button class="nav-arrow" onclick="changeWeek(-7)">❮</button>
+                <div id="calendar-strip" class="calendar-strip"></div>
+                <button class="nav-arrow" onclick="changeWeek(7)">❯</button>
+            </div>
+            <div id="taskList" class="task-list"></div>
+        </section>
+
+        <!-- ЭКРАН 2: ТЕГИ -->
+        <section id="screen-tags" class="screen" style="display:none;">
+            <header><h1>Теги</h1></header>
+            <div class="form-container">
+                <div class="row">
+                    <input type="text" id="newTagName" placeholder="Название">
+                    <input type="color" id="newTagColor" value="#007bff">
+                </div>
+                <button class="btn-save" onclick="createTag()">Создать тег</button>
+            </div>
+            <div id="tags-management-list" class="task-list"></div>
+        </section>
+
+        <!-- ЭКРАН 3: СОЗДАНИЕ -->
+        <section id="screen-create" class="screen" style="display:none;">
+            <header><h1>Новая задача</h1></header>
+            <div class="form-container">
+                <input type="text" id="taskText" placeholder="Что нужно сделать?">
+                <div class="row">
+                    <label>Дата: <input type="date" id="taskDate"></label>
+                    <label>Время: <input type="time" id="taskTime"></label> <!-- Убрали дефолтное 09:00 -->
+                </div>
+                <div class="days-selector">
+                    <p>Повтор по дням:</p>
+                    <div class="days-grid">
+                        <button type="button" class="day-btn" data-day="1">Пн</button>
+                        <button type="button" class="day-btn" data-day="2">Вт</button>
+                        <button type="button" class="day-btn" data-day="3">Ср</button>
+                        <button type="button" class="day-btn" data-day="4">Чт</button>
+                        <button type="button" class="day-btn" data-day="5">Пт</button>
+                        <button type="button" class="day-btn" data-day="6">Сб</button>
+                        <button type="button" class="day-btn" data-day="0">Вс</button>
+                    </div>
+                </div>
+                <div class="tag-selector-container">
+                    <p>Выберите теги:</p>
+                    <div id="tag-choices" class="tag-chips-cloud"></div>
+                </div>
+                <select id="taskDifficulty">
+                    <option value="1">⭐ Легко</option>
+                    <option value="2">⭐⭐ Средне</option>
+                    <option value="3">⭐⭐⭐ Важно</option>
+                </select>
+                <button class="btn-save" onclick="addTask()">Создать</button>
+            </div>
+        </section>
+
+        <!-- ЭКРАН 4: АРХИВ (ВЫПОЛНЕННЫЕ) -->
+        <section id="screen-archive" class="screen" style="display:none;">
+            <header><h1>Архив</h1></header>
+            <div id="archiveList" class="task-list"></div>
+        </section>
+
+        <!-- ЭКРАН 5: СТАТИСТИКА -->
+        <section id="screen-stats" class="screen" style="display:none;">
+            <header><h1>Аналитика</h1></header>
+            <div class="stats-scroll-container">
+                <div class="stat-section">
+                    <h3>Активность</h3>
+                    <div id="heatmap" class="heatmap"></div>
+                </div>
+                <div class="stat-section">
+                    <h3>Баланс тегов</h3>
+                    <div class="canvas-container"><canvas id="radarChart"></canvas></div>
+                </div>
+                <div id="stats-summary" class="stats-summary-grid"></div>
+            </div>
+        </section>
+
+        <!-- НАВИГАЦИЯ -->
+        <nav class="nav-bar">
+            <button onclick="showScreen('screen-list')">📋</button>
+            <button onclick="showScreen('screen-archive')">✅</button>
+            <button onclick="showScreen('screen-create')" class="add-nav-btn">➕</button>
+            <button onclick="showScreen('screen-tags')">🏷️</button>
+            <button onclick="showScreen('screen-stats')">📊</button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

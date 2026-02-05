@@ -1,0 +1,80 @@
+{
+  "tasks": [
+    {
+      "id": 1770247739794,
+      "text": "фыв",
+      "date": "2026-02-05",
+      "time": "09:00",
+      "completed": true,
+      "difficulty": 1,
+      "tagIds": [
+        1770247724786
+      ],
+      "repeatDays": [
+        4
+      ],
+      "completedAt": "2026-02-04T23:53:14.356Z"
+    },
+    {
+      "id": 1770247845021,
+      "text": "Пожить",
+      "date": "2026-02-05",
+      "time": "10:00",
+      "completed": true,
+      "difficulty": 1,
+      "tagIds": [
+        1770247724786,
+        1770247826939
+      ],
+      "repeatDays": [
+        4
+      ],
+      "completedAt": "2026-02-04T23:53:19.884Z"
+    },
+    {
+      "id": 1770249383762,
+      "text": "Воваи",
+      "date": null,
+      "time": "09:00",
+      "completed": true,
+      "difficulty": 1,
+      "tagIds": [],
+      "repeatDays": [],
+      "completedAt": "2026-02-04T23:56:27.794Z"
+    },
+    {
+      "id": 1770249393817,
+      "text": "Воваиа",
+      "date": null,
+      "time": "09:00",
+      "completed": true,
+      "difficulty": 1,
+      "tagIds": [],
+      "repeatDays": [],
+      "completedAt": "2026-02-04T23:56:37.085Z"
+    },
+    {
+      "id": 1770250072316,
+      "text": "Привет",
+      "date": null,
+      "time": null,
+      "completed": true,
+      "completedAt": "2026-02-05T00:07:56.447Z",
+      "difficulty": 1,
+      "tagIds": [],
+      "repeatDays": []
+    }
+  ],
+  "tags": [
+    {
+      "id": 1770247724786,
+      "name": "Работа",
+      "color": "#ff0000"
+    },
+    {
+      "id": 1770247826939,
+      "name": "Жизнь",
+      "color": "#00ff00"
+    }
+  ]
+}
