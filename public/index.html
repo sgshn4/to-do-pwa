@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <meta name="theme-color" content="#007bff">
-</head>
+    <meta name="theme-color" content="#007bff"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /></head>
 <body>
 <div id="login-overlay" class="login-overlay">
     <div class="login-box">
@@ -70,9 +69,9 @@
                     <div id="tag-choices" class="tag-chips-cloud"></div>
                 </div>
                 <select id="taskDifficulty">
-                    <option value="1">⭐ Легко</option>
-                    <option value="2">⭐⭐ Средне</option>
-                    <option value="3">⭐⭐⭐ Важно</option>
+                    <option value="1">Легко</option>
+                    <option value="2">Средне</option>
+                    <option value="3">Важно</option>
                 </select>
                 <button class="btn-save" onclick="addTask()">Создать</button>
             </div>
@@ -100,14 +99,26 @@
             </div>
         </section>
 
-        <!-- НАВИГАЦИЯ -->
-        <nav class="nav-bar">
-            <button onclick="showScreen('screen-list')">📋</button>
-            <button onclick="showScreen('screen-archive')">✅</button>
-            <button onclick="showScreen('screen-create')" class="add-nav-btn">➕</button>
-            <button onclick="showScreen('screen-tags')">🏷️</button>
-            <button onclick="showScreen('screen-stats')">📊</button>
-        </nav>
+<nav class="nav-bar">
+    <button onclick="showScreen('screen-tags')" class="nav-btn" id="nav-screen-tags">
+        <span class="material-symbols-outlined">bookmark</span>
+    </button>
+    <button onclick="showScreen('screen-list')" class="nav-btn" id="nav-screen-list">
+        <span class="material-symbols-outlined">checklist</span>
+    </button>
+
+    <button onclick="showScreen('screen-create')" class="add-nav-btn">
+        <span class="material-symbols-outlined">add</span>
+    </button>
+
+    <button onclick="showScreen('screen-archive')" class="nav-btn" id="nav-screen-archive">
+        <span class="material-symbols-outlined">check_box</span>
+    </button>
+
+    <button onclick="showScreen('screen-stats')" class="nav-btn" id="nav-screen-stats">
+        <span class="material-symbols-outlined">analytics</span>
+    </button>
+</nav>
     </div>
     <script src="script.js"></script>
 </body>
