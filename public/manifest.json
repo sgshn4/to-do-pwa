@@ -1,10 +1,10 @@
 {
   "name": "Node JS Todo PWA",
-  "short_name": "TodoPWA",
+  "short_name": "InTime",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#007bff",
+  "theme_color": "#0984aa",
   "icons": [
     {
       "src": "https://via.placeholder.com/192",
